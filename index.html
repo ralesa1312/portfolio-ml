@@ -1,10 +1,13 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" data-theme="dark">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Mioty Sahaza RAZAFINDRAMANITRA</title>
+    <meta name="description" content="Portfolio de Mioty Sahaza RAZAFINDRAMANITRA - Machine Learning Engineer spécialisé en Deep Learning, NLP et déploiement de modèles.">
+    <meta name="keywords" content="Machine Learning, Deep Learning, NLP, Python, TensorFlow, PyTorch, Data Science">
+    <meta name="author" content="Mioty Sahaza RAZAFINDRAMANITRA">
+    <title>Portfolio - Mioty Sahaza RAZAFINDRAMANITRA | ML Engineer</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,39 +25,66 @@
 
 <body>
 
+    <!-- Particles Background -->
+    <canvas id="particles-canvas"></canvas>
+
     <!-- Navigation -->
-    <nav>
+    <nav id="navbar">
         <div class="container nav-content">
             <div class="logo">Ralesa<span class="highlight">.AI</span></div>
-            <ul class="nav-links">
-                <li><a href="#about">À propos</a></li>
-                <li><a href="#skills">Compétences</a></li>
-                <li><a href="#projects">Projets</a></li>
-                <li><a href="#contact">Contact</a></li>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#hero" class="nav-link active">Accueil</a></li>
+                <li><a href="#skills" class="nav-link">Compétences</a></li>
+                <li><a href="#experience" class="nav-link">Expérience</a></li>
+                <li><a href="#projects" class="nav-link">Projets</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
+            <div class="nav-actions">
+                <!-- Theme Toggle -->
+                <button class="theme-toggle" id="theme-toggle" aria-label="Changer de thème">
+                    <i class="fa-solid fa-sun"></i>
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <!-- Mobile Menu Toggle -->
+                <button class="hamburger" id="hamburger" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
         </div>
     </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobile-overlay"></div>
 
     <!-- Hero Section -->
     <section id="hero">
         <div class="container hero-grid">
-            <div class="hero-text">
-                <h1>Bonjour, je suis <br><span class="highlight">Mioty Sahaza</span></h1>
+            <div class="hero-text reveal">
+                <p class="greeting">Bonjour, je suis</p>
+                <h1><span class="highlight">Mioty Sahaza</span></h1>
                 <h2>RAZAFINDRAMANITRA</h2>
-                <p class="role">Machine Learning Engineer</p>
+                <p class="role"><span id="typing-text"></span><span class="cursor">|</span></p>
                 <p class="bio">
                     Je transforme les données en solutions intelligentes. Spécialisé en Deep Learning, NLP et
                     déploiement de modèles à grande échelle.
                 </p>
                 <div class="hero-cta">
-                    <a href="#contact" class="btn btn-primary">Me contacter</a>
-                    <a href="#projects" class="btn btn-outline">Voir mes projets</a>
+                    <a href="#contact" class="btn btn-primary">
+                        <i class="fa-solid fa-paper-plane"></i> Me contacter
+                    </a>
+                    <a href="#projects" class="btn btn-outline">
+                        <i class="fa-solid fa-folder-open"></i> Voir mes projets
+                    </a>
+                    <a href="#" class="btn btn-secondary" id="download-cv">
+                        <i class="fa-solid fa-download"></i> Télécharger CV
+                    </a>
                 </div>
             </div>
-            <div class="hero-image">
+            <div class="hero-image reveal reveal-delay">
                 <div class="img-wrapper">
-                    <!-- Using one of the provided images -->
-                    <img src="img/WhatsApp Image 2026-01-26 at 18.51.22.jpeg" alt="Photo de profil">
+                    <img src="img/WhatsApp Image 2026-01-26 at 18.51.22.jpeg" alt="Photo de profil de Mioty Sahaza">
                 </div>
             </div>
         </div>
@@ -63,52 +93,118 @@
     <!-- Skills Section -->
     <section id="skills" class="section">
         <div class="container">
-            <h2>Mes <span class="highlight">Compétences</span></h2>
+            <h2 class="reveal">Mes <span class="highlight">Compétences</span></h2>
             <div class="skills-grid">
                 <!-- Data Science & ML -->
-                <div class="skill-card">
+                <div class="skill-card reveal" data-tilt>
                     <i class="fa-brands fa-python"></i>
                     <h3>Python</h3>
+                    <p class="skill-desc">NumPy, Pandas, Scikit-learn</p>
                 </div>
-                <div class="skill-card">
+                <div class="skill-card reveal" data-tilt>
                     <i class="fa-solid fa-brain"></i>
                     <h3>TensorFlow / PyTorch</h3>
+                    <p class="skill-desc">Deep Learning, CNN, RNN</p>
                 </div>
-                <div class="skill-card">
+                <div class="skill-card reveal" data-tilt>
                     <i class="fa-solid fa-database"></i>
                     <h3>SQL / NoSQL</h3>
+                    <p class="skill-desc">PostgreSQL, MongoDB, Redis</p>
                 </div>
-                <div class="skill-card">
+                <div class="skill-card reveal" data-tilt>
                     <i class="fa-solid fa-robot"></i>
                     <h3>NLP / LLMs</h3>
+                    <p class="skill-desc">Transformers, BERT, GPT</p>
                 </div>
                 <!-- Tools -->
-                <div class="skill-card">
+                <div class="skill-card reveal" data-tilt>
                     <i class="fa-brands fa-docker"></i>
                     <h3>Docker</h3>
+                    <p class="skill-desc">Containerisation, Kubernetes</p>
                 </div>
-                <div class="skill-card">
+                <div class="skill-card reveal" data-tilt>
                     <i class="fa-brands fa-aws"></i>
                     <h3>Cloud (AWS/GCP)</h3>
+                    <p class="skill-desc">EC2, S3, Lambda, BigQuery</p>
                 </div>
-                <div class="skill-card">
+                <div class="skill-card reveal" data-tilt>
                     <i class="fa-brands fa-git-alt"></i>
                     <h3>Git / CI/CD</h3>
+                    <p class="skill-desc">GitHub Actions, GitLab CI</p>
                 </div>
-                <div class="skill-card">
+                <div class="skill-card reveal" data-tilt>
                     <i class="fa-solid fa-chart-line"></i>
                     <h3>Data Visualization</h3>
+                    <p class="skill-desc">Matplotlib, Plotly, Tableau</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section (Placeholder) -->
+    <!-- Experience Section -->
+    <section id="experience" class="section">
+        <div class="container">
+            <h2 class="reveal">Mon <span class="highlight">Parcours</span></h2>
+            <div class="timeline">
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2024 - Présent</span>
+                        <h3>Machine Learning Engineer</h3>
+                        <h4>Entreprise Tech</h4>
+                        <p>Développement et déploiement de modèles ML en production. Optimisation des pipelines de données et mise en place de solutions MLOps.</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2022 - 2024</span>
+                        <h3>Data Scientist Junior</h3>
+                        <h4>Startup IA</h4>
+                        <p>Analyse de données, création de modèles prédictifs et automatisation des processus métier avec Python et SQL.</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2020 - 2022</span>
+                        <h3>Stage Data Analyst</h3>
+                        <h4>Grande Entreprise</h4>
+                        <p>Création de dashboards, analyses statistiques et premiers projets de machine learning supervisé.</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2017 - 2022</span>
+                        <h3>Formation</h3>
+                        <h4>Diplôme en Informatique / Data Science</h4>
+                        <p>Spécialisation en intelligence artificielle et apprentissage automatique.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
     <section id="projects" class="section">
         <div class="container">
-            <h2>Projets <span class="highlight">Récents</span></h2>
+            <h2 class="reveal">Projets <span class="highlight">Récents</span></h2>
             <div class="projects-grid">
-                <div class="project-card">
+                <div class="project-card reveal" data-tilt>
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i class="fa-solid fa-chart-area"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <a href="#" class="project-link" title="Voir le projet">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                            <a href="https://github.com/ralesa1312" target="_blank" class="project-link" title="Code source">
+                                <i class="fa-brands fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
                     <div class="project-content">
                         <h3>Détection d'Anomalies</h3>
                         <div class="project-tags">
@@ -116,10 +212,23 @@
                             <span class="tag">Scikit-learn</span>
                             <span class="tag">IoT</span>
                         </div>
-                        <p>Système de détection d'anomalies en temps réel pour des capteurs industriels.</p>
+                        <p>Système de détection d'anomalies en temps réel pour des capteurs industriels utilisant des algorithmes de clustering.</p>
                     </div>
                 </div>
-                <div class="project-card">
+                <div class="project-card reveal" data-tilt>
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i class="fa-solid fa-comments"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <a href="#" class="project-link" title="Voir le projet">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                            <a href="https://github.com/ralesa1312" target="_blank" class="project-link" title="Code source">
+                                <i class="fa-brands fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
                     <div class="project-content">
                         <h3>Chatbot NLP</h3>
                         <div class="project-tags">
@@ -127,10 +236,23 @@
                             <span class="tag">Transformers</span>
                             <span class="tag">API</span>
                         </div>
-                        <p>Assistant conversationnel fin-tuné sur des données spécifiques au domaine médical.</p>
+                        <p>Assistant conversationnel fin-tuné sur des données spécifiques au domaine médical avec une précision de 94%.</p>
                     </div>
                 </div>
-                <div class="project-card">
+                <div class="project-card reveal" data-tilt>
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i class="fa-solid fa-coins"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <a href="#" class="project-link" title="Voir le projet">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                            <a href="https://github.com/ralesa1312" target="_blank" class="project-link" title="Code source">
+                                <i class="fa-brands fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
                     <div class="project-content">
                         <h3>Prédiction Financière</h3>
                         <div class="project-tags">
@@ -138,7 +260,7 @@
                             <span class="tag">Pandas</span>
                             <span class="tag">Finance</span>
                         </div>
-                        <p>Modèle de séries temporelles pour prédire les tendances boursières à court terme.</p>
+                        <p>Modèle de séries temporelles LSTM pour prédire les tendances boursières avec un MAE de 2.3%.</p>
                     </div>
                 </div>
             </div>
@@ -148,31 +270,32 @@
     <!-- Contact Section -->
     <section id="contact" class="section">
         <div class="container">
-            <h2>Me <span class="highlight">Contacter</span></h2>
+            <h2 class="reveal">Me <span class="highlight">Contacter</span></h2>
+            <p class="contact-intro reveal">Vous avez un projet en tête ? N'hésitez pas à me contacter !</p>
             <div class="contact-container">
                 <a href="https://www.linkedin.com/in/mioty-sahaza-razafindramanitra-1092a6238" target="_blank"
-                    class="contact-card">
+                    class="contact-card reveal" data-tilt>
                     <i class="fa-brands fa-linkedin"></i>
                     <div>
                         <h4>LinkedIn</h4>
                         <p>Connectons-nous</p>
                     </div>
                 </a>
-                <a href="https://github.com/ralesa1312" target="_blank" class="contact-card">
+                <a href="https://github.com/ralesa1312" target="_blank" class="contact-card reveal" data-tilt>
                     <i class="fa-brands fa-github"></i>
                     <div>
                         <h4>GitHub</h4>
                         <p>Voir mon code</p>
                     </div>
                 </a>
-                <a href="mailto:sahazamioty4@gmail.com" class="contact-card">
+                <a href="mailto:sahazamioty4@gmail.com" class="contact-card reveal" data-tilt>
                     <i class="fa-solid fa-envelope"></i>
                     <div>
                         <h4>Email</h4>
                         <p>sahazamioty4@gmail.com</p>
                     </div>
                 </a>
-                <a href="tel:+261343313122" class="contact-card">
+                <a href="tel:+261343313122" class="contact-card reveal" data-tilt>
                     <i class="fa-solid fa-phone"></i>
                     <div>
                         <h4>Téléphone</h4>
@@ -185,9 +308,28 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2026 Mioty Sahaza RAZAFINDRAMANITRA. Tous droits réservés.</p>
+            <div class="footer-content">
+                <div class="footer-logo">Ralesa<span class="highlight">.AI</span></div>
+                <div class="footer-social">
+                    <a href="https://www.linkedin.com/in/mioty-sahaza-razafindramanitra-1092a6238" target="_blank" aria-label="LinkedIn">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/ralesa1312" target="_blank" aria-label="GitHub">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a href="mailto:sahazamioty4@gmail.com" aria-label="Email">
+                        <i class="fa-solid fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+            <p class="footer-copy">&copy; 2026 Mioty Sahaza RAZAFINDRAMANITRA. Tous droits réservés.</p>
         </div>
     </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="back-to-top" aria-label="Retour en haut">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
 
     <script src="js/main.js"></script>
 </body>
