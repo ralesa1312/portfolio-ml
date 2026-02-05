@@ -33,13 +33,18 @@
         <div class="container nav-content">
             <div class="logo">Ralesa<span class="highlight">.AI</span></div>
             <ul class="nav-links" id="nav-links">
-                <li><a href="#hero" class="nav-link active">Accueil</a></li>
-                <li><a href="#skills" class="nav-link">Compétences</a></li>
-                <li><a href="#experience" class="nav-link">Expérience</a></li>
-                <li><a href="#projects" class="nav-link">Projets</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><a href="#hero" class="nav-link active" data-i18n="nav.home">Accueil</a></li>
+                <li><a href="#skills" class="nav-link" data-i18n="nav.skills">Compétences</a></li>
+                <li><a href="#experience" class="nav-link" data-i18n="nav.experience">Expérience</a></li>
+                <li><a href="#projects" class="nav-link" data-i18n="nav.projects">Projets</a></li>
+                <li><a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a></li>
             </ul>
             <div class="nav-actions">
+                <!-- Language Toggle -->
+                <div class="lang-toggle">
+                    <button class="lang-btn active" data-lang="fr">FR</button>
+                    <button class="lang-btn" data-lang="en">EN</button>
+                </div>
                 <!-- Theme Toggle -->
                 <button class="theme-toggle" id="theme-toggle" aria-label="Changer de thème">
                     <i class="fa-solid fa-sun"></i>
@@ -62,29 +67,29 @@
     <section id="hero">
         <div class="container hero-grid">
             <div class="hero-text reveal">
-                <p class="greeting">Bonjour, je suis</p>
+                <p class="greeting" data-i18n="hero.greeting">Bonjour, je suis</p>
                 <h1><span class="highlight">Mioty Sahaza</span></h1>
                 <h2>RAZAFINDRAMANITRA</h2>
                 <p class="role"><span id="typing-text"></span><span class="cursor">|</span></p>
-                <p class="bio">
+                <p class="bio" data-i18n="hero.bio">
                     Je transforme les données en solutions intelligentes. Spécialisé en Deep Learning, NLP et
                     déploiement de modèles à grande échelle.
                 </p>
                 <div class="hero-cta">
                     <a href="#contact" class="btn btn-primary">
-                        <i class="fa-solid fa-paper-plane"></i> Me contacter
+                        <i class="fa-solid fa-paper-plane"></i> <span data-i18n="hero.contact">Me contacter</span>
                     </a>
                     <a href="#projects" class="btn btn-outline">
-                        <i class="fa-solid fa-folder-open"></i> Voir mes projets
+                        <i class="fa-solid fa-folder-open"></i> <span data-i18n="hero.projects">Voir mes projets</span>
                     </a>
-                    <a href="#" class="btn btn-secondary" id="download-cv">
-                        <i class="fa-solid fa-download"></i> Télécharger CV
+                    <a href="static/cv/RAZAFINDRAMANITRA_Mioty_Sahaza_CV_Final.pdf" class="btn btn-secondary" id="download-cv" download>
+                        <i class="fa-solid fa-download"></i> <span data-i18n="hero.cv">Télécharger CV</span>
                     </a>
                 </div>
             </div>
             <div class="hero-image reveal reveal-delay">
                 <div class="img-wrapper">
-                    <img src="img/WhatsApp Image 2026-01-26 at 18.51.22.jpeg" alt="Photo de profil de Mioty Sahaza">
+                    <img src="static/img/WhatsApp Image 2026-01-26 at 18.51.22.jpeg" alt="Photo de profil de Mioty Sahaza">
                 </div>
             </div>
         </div>
@@ -93,7 +98,7 @@
     <!-- Skills Section -->
     <section id="skills" class="section">
         <div class="container">
-            <h2 class="reveal">Mes <span class="highlight">Compétences</span></h2>
+            <h2 class="reveal" data-i18n="skills.title">Mes <span class="highlight">Compétences</span></h2>
             <div class="skills-grid">
                 <!-- Data Science & ML -->
                 <div class="skill-card reveal" data-tilt>
@@ -144,42 +149,42 @@
     <!-- Experience Section -->
     <section id="experience" class="section">
         <div class="container">
-            <h2 class="reveal">Mon <span class="highlight">Parcours</span></h2>
+            <h2 class="reveal" data-i18n="experience.title">Mon <span class="highlight">Parcours</span></h2>
             <div class="timeline">
                 <div class="timeline-item reveal">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <span class="timeline-date">2024 - Présent</span>
-                        <h3>Machine Learning Engineer</h3>
-                        <h4>Entreprise Tech</h4>
-                        <p>Développement et déploiement de modèles ML en production. Optimisation des pipelines de données et mise en place de solutions MLOps.</p>
+                        <span class="timeline-date" data-i18n="experience.job1.date">2024 - Présent</span>
+                        <h3 data-i18n="experience.job1.title">Machine Learning Engineer</h3>
+                        <h4 data-i18n="experience.job1.company">Entreprise Tech</h4>
+                        <p data-i18n="experience.job1.desc">Développement et déploiement de modèles ML en production. Optimisation des pipelines de données et mise en place de solutions MLOps.</p>
                     </div>
                 </div>
                 <div class="timeline-item reveal">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <span class="timeline-date">2022 - 2024</span>
-                        <h3>Data Scientist Junior</h3>
-                        <h4>Startup IA</h4>
-                        <p>Analyse de données, création de modèles prédictifs et automatisation des processus métier avec Python et SQL.</p>
+                        <h3 data-i18n="experience.job2.title">Data Scientist Junior</h3>
+                        <h4 data-i18n="experience.job2.company">Startup IA</h4>
+                        <p data-i18n="experience.job2.desc">Analyse de données, création de modèles prédictifs et automatisation des processus métier avec Python et SQL.</p>
                     </div>
                 </div>
                 <div class="timeline-item reveal">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <span class="timeline-date">2020 - 2022</span>
-                        <h3>Stage Data Analyst</h3>
-                        <h4>Grande Entreprise</h4>
-                        <p>Création de dashboards, analyses statistiques et premiers projets de machine learning supervisé.</p>
+                        <h3 data-i18n="experience.job3.title">Stage Data Analyst</h3>
+                        <h4 data-i18n="experience.job3.company">Grande Entreprise</h4>
+                        <p data-i18n="experience.job3.desc">Création de dashboards, analyses statistiques et premiers projets de machine learning supervisé.</p>
                     </div>
                 </div>
                 <div class="timeline-item reveal">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <span class="timeline-date">2017 - 2022</span>
-                        <h3>Formation</h3>
-                        <h4>Diplôme en Informatique / Data Science</h4>
-                        <p>Spécialisation en intelligence artificielle et apprentissage automatique.</p>
+                        <h3 data-i18n="experience.edu.title">Formation</h3>
+                        <h4 data-i18n="experience.edu.degree">Diplôme en Informatique / Data Science</h4>
+                        <p data-i18n="experience.edu.desc">Spécialisation en intelligence artificielle et apprentissage automatique.</p>
                     </div>
                 </div>
             </div>
@@ -189,7 +194,7 @@
     <!-- Projects Section -->
     <section id="projects" class="section">
         <div class="container">
-            <h2 class="reveal">Projets <span class="highlight">Récents</span></h2>
+            <h2 class="reveal" data-i18n="projects.title">Projets <span class="highlight">Récents</span></h2>
             <div class="projects-grid">
                 <div class="project-card reveal" data-tilt>
                     <div class="project-image">
@@ -206,13 +211,13 @@
                         </div>
                     </div>
                     <div class="project-content">
-                        <h3>Détection d'Anomalies</h3>
+                        <h3 data-i18n="projects.anomaly.title">Détection d'Anomalies</h3>
                         <div class="project-tags">
                             <span class="tag">Python</span>
                             <span class="tag">Scikit-learn</span>
                             <span class="tag">IoT</span>
                         </div>
-                        <p>Système de détection d'anomalies en temps réel pour des capteurs industriels utilisant des algorithmes de clustering.</p>
+                        <p data-i18n="projects.anomaly.desc">Système de détection d'anomalies en temps réel pour des capteurs industriels utilisant des algorithmes de clustering.</p>
                     </div>
                 </div>
                 <div class="project-card reveal" data-tilt>
@@ -230,13 +235,13 @@
                         </div>
                     </div>
                     <div class="project-content">
-                        <h3>Chatbot NLP</h3>
+                        <h3 data-i18n="projects.chatbot.title">Chatbot NLP</h3>
                         <div class="project-tags">
                             <span class="tag">PyTorch</span>
                             <span class="tag">Transformers</span>
                             <span class="tag">API</span>
                         </div>
-                        <p>Assistant conversationnel fin-tuné sur des données spécifiques au domaine médical avec une précision de 94%.</p>
+                        <p data-i18n="projects.chatbot.desc">Assistant conversationnel fin-tuné sur des données spécifiques au domaine médical avec une précision de 94%.</p>
                     </div>
                 </div>
                 <div class="project-card reveal" data-tilt>
@@ -254,13 +259,13 @@
                         </div>
                     </div>
                     <div class="project-content">
-                        <h3>Prédiction Financière</h3>
+                        <h3 data-i18n="projects.finance.title">Prédiction Financière</h3>
                         <div class="project-tags">
                             <span class="tag">LSTM</span>
                             <span class="tag">Pandas</span>
                             <span class="tag">Finance</span>
                         </div>
-                        <p>Modèle de séries temporelles LSTM pour prédire les tendances boursières avec un MAE de 2.3%.</p>
+                        <p data-i18n="projects.finance.desc">Modèle de séries temporelles LSTM pour prédire les tendances boursières avec un MAE de 2.3%.</p>
                     </div>
                 </div>
             </div>
@@ -270,22 +275,22 @@
     <!-- Contact Section -->
     <section id="contact" class="section">
         <div class="container">
-            <h2 class="reveal">Me <span class="highlight">Contacter</span></h2>
-            <p class="contact-intro reveal">Vous avez un projet en tête ? N'hésitez pas à me contacter !</p>
+            <h2 class="reveal" data-i18n="contact.title">Me <span class="highlight">Contacter</span></h2>
+            <p class="contact-intro reveal" data-i18n="contact.intro">Vous avez un projet en tête ? N'hésitez pas à me contacter !</p>
             <div class="contact-container">
                 <a href="https://www.linkedin.com/in/mioty-sahaza-razafindramanitra-1092a6238" target="_blank"
                     class="contact-card reveal" data-tilt>
                     <i class="fa-brands fa-linkedin"></i>
                     <div>
                         <h4>LinkedIn</h4>
-                        <p>Connectons-nous</p>
+                        <p data-i18n="contact.linkedin">Connectons-nous</p>
                     </div>
                 </a>
                 <a href="https://github.com/ralesa1312" target="_blank" class="contact-card reveal" data-tilt>
                     <i class="fa-brands fa-github"></i>
                     <div>
                         <h4>GitHub</h4>
-                        <p>Voir mon code</p>
+                        <p data-i18n="contact.github">Voir mon code</p>
                     </div>
                 </a>
                 <a href="mailto:sahazamioty4@gmail.com" class="contact-card reveal" data-tilt>
@@ -298,7 +303,7 @@
                 <a href="tel:+261343313122" class="contact-card reveal" data-tilt>
                     <i class="fa-solid fa-phone"></i>
                     <div>
-                        <h4>Téléphone</h4>
+                        <h4 data-i18n="contact.phone">Téléphone</h4>
                         <p>+261 34 33 131 22</p>
                     </div>
                 </a>
@@ -322,7 +327,7 @@
                     </a>
                 </div>
             </div>
-            <p class="footer-copy">&copy; 2026 Mioty Sahaza RAZAFINDRAMANITRA. Tous droits réservés.</p>
+            <p class="footer-copy">&copy; 2026 Mioty Sahaza RAZAFINDRAMANITRA. <span data-i18n="footer.rights">Tous droits réservés.</span></p>
         </div>
     </footer>
 

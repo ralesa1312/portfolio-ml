@@ -1,10 +1,170 @@
 /**
  * Portfolio - Main JavaScript
- * Features: Scroll Reveal, Typing Effect, Particles, Theme Toggle, Mobile Menu
+ * Features: Scroll Reveal, Typing Effect, Particles, Theme Toggle, Mobile Menu, i18n
  */
+
+/* ============================================
+   TRANSLATIONS
+============================================ */
+const translations = {
+    fr: {
+        nav: {
+            home: 'Accueil',
+            skills: 'Compétences',
+            experience: 'Expérience',
+            projects: 'Projets',
+            contact: 'Contact'
+        },
+        hero: {
+            greeting: 'Bonjour, je suis',
+            bio: 'Je transforme les données en solutions intelligentes. Spécialisé en Deep Learning, NLP et déploiement de modèles à grande échelle.',
+            contact: 'Me contacter',
+            projects: 'Voir mes projets',
+            cv: 'Télécharger CV'
+        },
+        typing: [
+            'Machine Learning Engineer',
+            'Deep Learning Specialist',
+            'NLP Expert',
+            'Data Scientist',
+            'AI Enthusiast'
+        ],
+        skills: {
+            title: 'Mes <span class="highlight">Compétences</span>'
+        },
+        experience: {
+            title: 'Mon <span class="highlight">Parcours</span>',
+            job1: {
+                date: '2024 - Présent',
+                title: 'Machine Learning Engineer',
+                company: 'Entreprise Tech',
+                desc: 'Développement et déploiement de modèles ML en production. Optimisation des pipelines de données et mise en place de solutions MLOps.'
+            },
+            job2: {
+                title: 'Data Scientist Junior',
+                company: 'Startup IA',
+                desc: 'Analyse de données, création de modèles prédictifs et automatisation des processus métier avec Python et SQL.'
+            },
+            job3: {
+                title: 'Stage Data Analyst',
+                company: 'Grande Entreprise',
+                desc: 'Création de dashboards, analyses statistiques et premiers projets de machine learning supervisé.'
+            },
+            edu: {
+                title: 'Formation',
+                degree: 'Diplôme en Informatique / Data Science',
+                desc: 'Spécialisation en intelligence artificielle et apprentissage automatique.'
+            }
+        },
+        projects: {
+            title: 'Projets <span class="highlight">Récents</span>',
+            anomaly: {
+                title: "Détection d'Anomalies",
+                desc: "Système de détection d'anomalies en temps réel pour des capteurs industriels utilisant des algorithmes de clustering."
+            },
+            chatbot: {
+                title: 'Chatbot NLP',
+                desc: 'Assistant conversationnel fin-tuné sur des données spécifiques au domaine médical avec une précision de 94%.'
+            },
+            finance: {
+                title: 'Prédiction Financière',
+                desc: 'Modèle de séries temporelles LSTM pour prédire les tendances boursières avec un MAE de 2.3%.'
+            }
+        },
+        contact: {
+            title: 'Me <span class="highlight">Contacter</span>',
+            intro: "Vous avez un projet en tête ? N'hésitez pas à me contacter !",
+            linkedin: 'Connectons-nous',
+            github: 'Voir mon code',
+            phone: 'Téléphone'
+        },
+        footer: {
+            rights: 'Tous droits réservés.'
+        }
+    },
+    en: {
+        nav: {
+            home: 'Home',
+            skills: 'Skills',
+            experience: 'Experience',
+            projects: 'Projects',
+            contact: 'Contact'
+        },
+        hero: {
+            greeting: "Hello, I'm",
+            bio: 'I transform data into intelligent solutions. Specialized in Deep Learning, NLP, and large-scale model deployment.',
+            contact: 'Contact me',
+            projects: 'View my projects',
+            cv: 'Download CV'
+        },
+        typing: [
+            'Machine Learning Engineer',
+            'Deep Learning Specialist',
+            'NLP Expert',
+            'Data Scientist',
+            'AI Enthusiast'
+        ],
+        skills: {
+            title: 'My <span class="highlight">Skills</span>'
+        },
+        experience: {
+            title: 'My <span class="highlight">Journey</span>',
+            job1: {
+                date: '2024 - Present',
+                title: 'Machine Learning Engineer',
+                company: 'Tech Company',
+                desc: 'Development and deployment of ML models in production. Optimization of data pipelines and implementation of MLOps solutions.'
+            },
+            job2: {
+                title: 'Junior Data Scientist',
+                company: 'AI Startup',
+                desc: 'Data analysis, creation of predictive models, and automation of business processes with Python and SQL.'
+            },
+            job3: {
+                title: 'Data Analyst Internship',
+                company: 'Large Corporation',
+                desc: 'Dashboard creation, statistical analysis, and first supervised machine learning projects.'
+            },
+            edu: {
+                title: 'Education',
+                degree: 'Computer Science / Data Science Degree',
+                desc: 'Specialization in artificial intelligence and machine learning.'
+            }
+        },
+        projects: {
+            title: 'Recent <span class="highlight">Projects</span>',
+            anomaly: {
+                title: 'Anomaly Detection',
+                desc: 'Real-time anomaly detection system for industrial sensors using clustering algorithms.'
+            },
+            chatbot: {
+                title: 'NLP Chatbot',
+                desc: 'Conversational assistant fine-tuned on medical domain-specific data with 94% accuracy.'
+            },
+            finance: {
+                title: 'Financial Prediction',
+                desc: 'LSTM time series model to predict stock market trends with a MAE of 2.3%.'
+            }
+        },
+        contact: {
+            title: 'Contact <span class="highlight">Me</span>',
+            intro: 'Have a project in mind? Feel free to reach out!',
+            linkedin: "Let's connect",
+            github: 'View my code',
+            phone: 'Phone'
+        },
+        footer: {
+            rights: 'All rights reserved.'
+        }
+    }
+};
+
+// Current language
+let currentLang = localStorage.getItem('lang') || 'fr';
 
 document.addEventListener('DOMContentLoaded', () => {
     // Initialize all features
+    initLanguageSwitcher();
     initTypingEffect();
     initScrollReveal();
     initParticles();
@@ -19,19 +179,68 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /* ============================================
+   LANGUAGE SWITCHER
+============================================ */
+function initLanguageSwitcher() {
+    const langButtons = document.querySelectorAll('.lang-btn');
+
+    // Set initial language
+    setLanguage(currentLang);
+
+    // Add click handlers
+    langButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const lang = btn.getAttribute('data-lang');
+            if (lang !== currentLang) {
+                setLanguage(lang);
+            }
+        });
+    });
+}
+
+function setLanguage(lang) {
+    currentLang = lang;
+    localStorage.setItem('lang', lang);
+
+    // Update html lang attribute
+    document.documentElement.setAttribute('lang', lang);
+
+    // Update active button
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+    });
+
+    // Update all translatable elements
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        const translation = getNestedTranslation(translations[lang], key);
+        if (translation) {
+            element.innerHTML = translation;
+        }
+    });
+
+    // Restart typing effect with new language
+    restartTypingEffect();
+}
+
+function getNestedTranslation(obj, key) {
+    return key.split('.').reduce((o, k) => (o && o[k] !== undefined) ? o[k] : null, obj);
+}
+
+/* ============================================
    TYPING EFFECT
 ============================================ */
+let typingTimeout = null;
+
 function initTypingEffect() {
+    startTypingEffect();
+}
+
+function startTypingEffect() {
     const typingElement = document.getElementById('typing-text');
     if (!typingElement) return;
 
-    const texts = [
-        'Machine Learning Engineer',
-        'Deep Learning Specialist',
-        'NLP Expert',
-        'Data Scientist',
-        'AI Enthusiast'
-    ];
+    const texts = translations[currentLang].typing;
 
     let textIndex = 0;
     let charIndex = 0;
@@ -61,11 +270,27 @@ function initTypingEffect() {
             typingSpeed = 500;
         }
 
-        setTimeout(type, typingSpeed);
+        typingTimeout = setTimeout(type, typingSpeed);
     }
 
     // Start typing after a small delay
-    setTimeout(type, 1000);
+    typingTimeout = setTimeout(type, 1000);
+}
+
+function restartTypingEffect() {
+    // Clear existing timeout
+    if (typingTimeout) {
+        clearTimeout(typingTimeout);
+    }
+
+    // Clear current text
+    const typingElement = document.getElementById('typing-text');
+    if (typingElement) {
+        typingElement.textContent = '';
+    }
+
+    // Restart typing
+    startTypingEffect();
 }
 
 /* ============================================

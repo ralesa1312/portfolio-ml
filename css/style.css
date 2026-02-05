@@ -298,6 +298,40 @@ nav.scrolled {
     transform: scale(1.05);
 }
 
+/* Language Toggle */
+.lang-toggle {
+    display: flex;
+    background: var(--bg-secondary);
+    border: 1px solid var(--card-border);
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+.lang-btn {
+    background: transparent;
+    border: none;
+    padding: 0.5rem 0.8rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: var(--transition);
+    font-family: var(--font-body);
+}
+
+.lang-btn:hover {
+    color: var(--text-primary);
+}
+
+.lang-btn.active {
+    background: var(--accent);
+    color: var(--bg-primary);
+}
+
+.lang-toggle:hover {
+    border-color: var(--accent);
+}
+
 /* Hamburger Menu */
 .hamburger {
     display: none;
