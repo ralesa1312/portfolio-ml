@@ -20,7 +20,10 @@ const translations = {
             bio: "Ingénieur Data & IA avec plus de 3 ans d'expérience. Spécialisé dans le déploiement de modèles ML, la construction de pipelines de données évolutifs et l'intelligence d'affaires (GCP, AWS, Azure, MLOps).",
             contact: 'Me contacter',
             projects: 'Voir mes projets',
-            cv: 'Télécharger CV'
+            cv: 'Télécharger CV',
+            stat1: "Ans d'expérience",
+            stat2: 'Entreprises',
+            stat3: 'Plateformes Cloud'
         },
         typing: [
             'Ingénieur Data & IA',
@@ -112,7 +115,10 @@ const translations = {
             bio: 'Data & AI Engineer with 3+ years of experience. Specialized in ML model deployment, scalable data pipelines, and business intelligence (GCP, AWS, Azure, MLOps).',
             contact: 'Contact me',
             projects: 'View my projects',
-            cv: 'Download CV'
+            cv: 'Download CV',
+            stat1: 'Years of Experience',
+            stat2: 'Companies',
+            stat3: 'Cloud Platforms'
         },
         typing: [
             'Data & AI Engineer',

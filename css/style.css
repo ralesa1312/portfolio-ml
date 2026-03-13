@@ -1088,3 +1088,175 @@ footer {
 [data-tilt] {
     transform-style: preserve-3d;
 }
+
+/* ============================================
+   HERO GLOW EFFECTS
+============================================ */
+#hero {
+    position: relative;
+}
+
+#hero::before {
+    content: '';
+    position: absolute;
+    top: 10%;
+    right: 5%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(56, 189, 248, 0.12) 0%, transparent 65%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+#hero::after {
+    content: '';
+    position: absolute;
+    bottom: 5%;
+    left: 0%;
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle, rgba(167, 139, 250, 0.1) 0%, transparent 65%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+#hero .container {
+    position: relative;
+    z-index: 1;
+}
+
+[data-theme="light"] #hero::before {
+    background: radial-gradient(circle, rgba(14, 165, 233, 0.08) 0%, transparent 65%);
+}
+
+[data-theme="light"] #hero::after {
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.06) 0%, transparent 65%);
+}
+
+/* ============================================
+   HERO STATS
+============================================ */
+.hero-stats {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.stat-value {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--accent);
+    font-family: var(--font-heading);
+    line-height: 1;
+}
+
+.stat-label {
+    font-size: 0.72rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 500;
+}
+
+.stat-divider {
+    width: 1px;
+    height: 36px;
+    background: var(--card-border);
+}
+
+/* ============================================
+   GLASSMORPHISM CARDS
+============================================ */
+.skill-card {
+    background: rgba(30, 41, 59, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-top: 3px solid var(--card-border);
+}
+
+[data-theme="light"] .skill-card {
+    background: rgba(248, 250, 252, 0.75);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.timeline-content {
+    background: rgba(30, 41, 59, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+[data-theme="light"] .timeline-content {
+    background: rgba(248, 250, 252, 0.8);
+    backdrop-filter: blur(10px);
+}
+
+/* ============================================
+   SKILL CARD CATEGORIES (colored top border)
+============================================ */
+.skill-card.cat-ml {
+    border-top-color: #38bdf8;
+}
+
+.skill-card.cat-cloud {
+    border-top-color: #a78bfa;
+}
+
+.skill-card.cat-bi {
+    border-top-color: #34d399;
+}
+
+.skill-card.cat-mlops {
+    border-top-color: #fb923c;
+}
+
+.skill-card.cat-data {
+    border-top-color: #f472b6;
+}
+
+.skill-card.cat-ml i { color: #38bdf8; }
+.skill-card.cat-cloud i { color: #a78bfa; }
+.skill-card.cat-bi i { color: #34d399; }
+.skill-card.cat-mlops i { color: #fb923c; }
+.skill-card.cat-data i { color: #f472b6; }
+
+/* ============================================
+   TIMELINE EDUCATION DIFFERENTIATION
+============================================ */
+.timeline-item.education .timeline-dot {
+    background: #a78bfa;
+    box-shadow: 0 0 15px rgba(167, 139, 250, 0.6);
+}
+
+.timeline-item.education .timeline-date {
+    background: #7c3aed;
+}
+
+.timeline-item.education .timeline-content h4 {
+    color: #a78bfa;
+}
+
+/* ============================================
+   RESPONSIVE STATS
+============================================ */
+@media (max-width: 480px) {
+    .hero-stats {
+        gap: 1rem;
+    }
+
+    .stat-value {
+        font-size: 1.1rem;
+    }
+
+    .stat-divider {
+        height: 28px;
+    }
+}
