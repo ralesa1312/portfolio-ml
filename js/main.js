@@ -17,17 +17,17 @@ const translations = {
         },
         hero: {
             greeting: 'Bonjour, je suis',
-            bio: 'Je transforme les données en solutions intelligentes. Spécialisé en Deep Learning, NLP et déploiement de modèles à grande échelle.',
+            bio: "Ingénieur Data & IA avec plus de 3 ans d'expérience. Spécialisé dans le déploiement de modèles ML, la construction de pipelines de données évolutifs et l'intelligence d'affaires (GCP, AWS, Azure, MLOps).",
             contact: 'Me contacter',
             projects: 'Voir mes projets',
             cv: 'Télécharger CV'
         },
         typing: [
-            'Machine Learning Engineer',
-            'Deep Learning Specialist',
-            'NLP Expert',
-            'Data Scientist',
-            'AI Enthusiast'
+            'Ingénieur Data & IA',
+            'Spécialiste Machine Learning',
+            'Analyste Business Intelligence',
+            'MLOps Engineer',
+            'Data Scientist'
         ],
         skills: {
             title: 'Mes <span class="highlight">Compétences</span>'
@@ -35,25 +35,42 @@ const translations = {
         experience: {
             title: 'Mon <span class="highlight">Parcours</span>',
             job1: {
-                date: '2024 - Présent',
-                title: 'Machine Learning Engineer',
-                company: 'Entreprise Tech',
-                desc: 'Développement et déploiement de modèles ML en production. Optimisation des pipelines de données et mise en place de solutions MLOps.'
+                date: 'Août 2025 – Présent',
+                title: 'Ingénieur Data & IA',
+                company: 'Fluentech Group',
+                desc: "Conception de solutions IA de bout en bout, construction de pipelines de données évolutifs et implémentation de pratiques MLOps complètes (MLflow, Vertex AI, Docker)."
             },
             job2: {
-                title: 'Data Scientist Junior',
-                company: 'Startup IA',
-                desc: 'Analyse de données, création de modèles prédictifs et automatisation des processus métier avec Python et SQL.'
+                date: 'Janvier 2026 – Présent',
+                title: 'Fondateur & Développeur',
+                company: 'e-bosy.com — Plateforme digitale',
+                desc: "Création et lancement de la plateforme e-bosy.com, de la conception initiale au déploiement en production. Définition de la vision produit, de l'architecture technique et de la stratégie de développement."
             },
             job3: {
-                title: 'Stage Data Analyst',
-                company: 'Grande Entreprise',
-                desc: 'Création de dashboards, analyses statistiques et premiers projets de machine learning supervisé.'
+                title: 'Analyste Business Intelligence',
+                company: 'BNI Madagascar',
+                desc: "Déploiement d'un tableau de bord Power BI stratégique et développement de modèles ML pour prédire les flux de crédit, réduisant le temps d'évaluation du risque de 30% et augmentant l'efficacité d'approbation de 25%."
             },
-            edu: {
-                title: 'Formation',
-                degree: 'Diplôme en Informatique / Data Science',
-                desc: 'Spécialisation en intelligence artificielle et apprentissage automatique.'
+            job4: {
+                title: "Développeur Système d'Information",
+                company: 'Oceantrade',
+                desc: "Développement d'un module CRM personnalisé sous Odoo, augmentant la productivité des ventes de 40%. Automatisation des tâches RH et marketing réduisant le temps de traitement de 60%."
+            },
+            job5: {
+                title: 'Spécialiste Opérations Bancaires Web',
+                company: 'Setex Group',
+                desc: "Traitement et analyse des données comptables via Excel avancé. Gestion des réclamations clients et litiges de paiement, résolvant 95% des cas dans les délais SLA."
+            },
+            edu1: {
+                date: 'Janvier 2023 – Juin 2024',
+                title: 'Master 1 Data Science & IA',
+                school: "Institut National Supérieur d'Informatique",
+                desc: "Spécialisation en intelligence artificielle, machine learning et analyse de données avancée."
+            },
+            edu2: {
+                title: 'Licence en Ingénierie — Physique des Signaux et Systèmes',
+                school: "Université d'Antananarivo",
+                desc: "Formation en physique appliquée, traitement du signal et systèmes embarqués."
             }
         },
         projects: {
@@ -92,17 +109,17 @@ const translations = {
         },
         hero: {
             greeting: "Hello, I'm",
-            bio: 'I transform data into intelligent solutions. Specialized in Deep Learning, NLP, and large-scale model deployment.',
+            bio: 'Data & AI Engineer with 3+ years of experience. Specialized in ML model deployment, scalable data pipelines, and business intelligence (GCP, AWS, Azure, MLOps).',
             contact: 'Contact me',
             projects: 'View my projects',
             cv: 'Download CV'
         },
         typing: [
-            'Machine Learning Engineer',
-            'Deep Learning Specialist',
-            'NLP Expert',
-            'Data Scientist',
-            'AI Enthusiast'
+            'Data & AI Engineer',
+            'Machine Learning Specialist',
+            'Business Intelligence Analyst',
+            'MLOps Engineer',
+            'Data Scientist'
         ],
         skills: {
             title: 'My <span class="highlight">Skills</span>'
@@ -110,25 +127,42 @@ const translations = {
         experience: {
             title: 'My <span class="highlight">Journey</span>',
             job1: {
-                date: '2024 - Present',
-                title: 'Machine Learning Engineer',
-                company: 'Tech Company',
-                desc: 'Development and deployment of ML models in production. Optimization of data pipelines and implementation of MLOps solutions.'
+                date: 'Aug 2025 – Present',
+                title: 'Data & AI Engineer',
+                company: 'Fluentech Group',
+                desc: 'End-to-end AI solution design, scalable data pipeline construction, and full MLOps practices implementation (MLflow, Vertex AI, Docker).'
             },
             job2: {
-                title: 'Junior Data Scientist',
-                company: 'AI Startup',
-                desc: 'Data analysis, creation of predictive models, and automation of business processes with Python and SQL.'
+                date: 'Jan 2026 – Present',
+                title: 'Founder & Developer',
+                company: 'e-bosy.com — Digital Platform',
+                desc: 'Created and launched the e-bosy.com platform from initial design to production deployment. Defined the product vision, technical architecture, and development strategy.'
             },
             job3: {
-                title: 'Data Analyst Internship',
-                company: 'Large Corporation',
-                desc: 'Dashboard creation, statistical analysis, and first supervised machine learning projects.'
+                title: 'Business Intelligence Analyst',
+                company: 'BNI Madagascar',
+                desc: 'Deployed a strategic Power BI dashboard and developed ML models to predict credit flows, reducing risk assessment time by 30% and increasing approval efficiency by 25%.'
             },
-            edu: {
-                title: 'Education',
-                degree: 'Computer Science / Data Science Degree',
-                desc: 'Specialization in artificial intelligence and machine learning.'
+            job4: {
+                title: 'Information Systems Developer',
+                company: 'Oceantrade',
+                desc: 'Developed a custom CRM module in Odoo, boosting sales team productivity by 40%. Automated HR and marketing tasks reducing processing time by 60%.'
+            },
+            job5: {
+                title: 'Web Banking Operations Specialist',
+                company: 'Setex Group',
+                desc: 'Processing and analysis of accounting data via advanced Excel. Managed customer complaints and payment disputes, resolving 95% of cases within SLA deadlines.'
+            },
+            edu1: {
+                date: 'Jan 2023 – Jun 2024',
+                title: 'Master 1 in Data Science & AI',
+                school: 'Institut National Supérieur d\'Informatique',
+                desc: 'Specialization in artificial intelligence, machine learning, and advanced data analysis.'
+            },
+            edu2: {
+                title: 'Bachelor in Engineering — Signal & Systems Physics',
+                school: 'University of Antananarivo',
+                desc: 'Training in applied physics, signal processing, and embedded systems.'
             }
         },
         projects: {
